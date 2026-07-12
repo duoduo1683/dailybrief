@@ -4,19 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>科技财经周刊 · 2026年7月第2周</title>
+  <meta http-equiv="refresh" content="600">
+  <title>TechFin Weekly · 科技与财经周报 + 每日实时</title>
 
   <style>
     :root {
-      --bg: #0a0c14;
-      --bg2: #12141f;
-      --bg3: #1a1d2e;
-      --bg4: #232838;
+      --bg: #08090f;
+      --bg2: #10121c;
+      --bg3: #181b28;
+      --bg4: #20243a;
       --ink: #f0f2f8;
       --ink2: #c4c8d6;
       --muted: #6b7088;
-      --muted2: #4a4f66;
-      --rule: #252940;
+      --muted2: #3e4258;
+      --rule: #1e2133;
       --accent: #6366f1;
       --accent2: #06b6d4;
       --accent3: #f59e0b;
@@ -24,7 +25,7 @@
       --red: #ef4444;
       --purple: #a855f7;
       --pink: #ec4899;
-      --max: 820px;
+      --max: 840px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,342 +40,191 @@
 
     /* === Top Nav === */
     .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10, 12, 20, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8, 9, 15, 0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--rule);
     }
     .top-nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0.7rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      max-width: var(--max); margin: 0 auto;
+      padding: 0.65rem 1.25rem; display: flex; align-items: center; gap: 0.8rem;
     }
     .top-nav .logo {
-      font-size: 0.9rem;
-      font-weight: 800;
+      font-size: 0.9rem; font-weight: 800;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       letter-spacing: -0.02em;
     }
-    .top-nav .nav-date {
-      font-size: 0.72rem;
-      color: var(--muted);
+    .top-nav .live-badge {
+      display: flex; align-items: center; gap: 0.3rem;
+      font-size: 0.65rem; font-weight: 700; color: var(--red); letter-spacing: 0.05em;
     }
+    .top-nav .live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--red);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 0 5px rgba(239,68,68,0); }
+    }
+    .top-nav .nav-date { font-size: 0.7rem; color: var(--muted); }
     .top-nav .nav-spacer { flex: 1; }
     .top-nav .nav-link {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.73rem; color: var(--muted); text-decoration: none; transition: color 0.2s;
     }
     .top-nav .nav-link:hover { color: var(--accent); }
 
-    article.page {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1.25rem 4rem;
-    }
+    article.page { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
 
     /* === Hero === */
-    .hero {
-      padding: 3rem 0 2rem;
-      text-align: center;
-    }
+    .hero { padding: 2.5rem 0 1.5rem; text-align: center; }
     .hero .week-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.72rem;
-      color: var(--accent2);
-      background: rgba(6, 182, 212, 0.08);
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 1.2rem;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; color: var(--accent2);
+      background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2);
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 1rem; font-weight: 600;
     }
     .hero h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
-      margin-bottom: 0.8rem;
+      font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 0.6rem;
     }
     .hero h1 .gradient {
       background: linear-gradient(135deg, var(--accent), var(--accent2), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .hero .sub {
-      font-size: 0.88rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-    }
+    .hero .sub { font-size: 0.85rem; color: var(--muted); max-width: 540px; margin: 0 auto; }
 
-    /* === Weekly Stats === */
+    /* === Stats === */
     .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.6rem;
-      margin-bottom: 2.5rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 2rem;
     }
     .stat-box {
-      background: var(--bg2);
-      border-radius: 12px;
-      padding: 0.9rem 0.6rem;
-      text-align: center;
+      background: var(--bg2); border-radius: 12px; padding: 0.8rem 0.5rem; text-align: center;
       border: 1px solid var(--rule);
     }
     .stat-box .num {
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.3rem; font-weight: 800;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .stat-box .label {
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 0.15rem;
+    .stat-box .label { font-size: 0.62rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* === Tab Switch === */
+    .tab-switch {
+      display: flex; gap: 0.4rem; margin-bottom: 1.5rem;
+      background: var(--bg2); border-radius: 10px; padding: 4px; border: 1px solid var(--rule);
+    }
+    .tab-btn {
+      flex: 1; background: transparent; border: none; color: var(--muted);
+      font-size: 0.8rem; font-weight: 600; padding: 0.5rem; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff;
     }
 
     /* === Weekly Summary === */
     .weekly-summary {
       background: linear-gradient(135deg, var(--bg2), var(--bg3));
-      border-radius: 16px;
-      padding: 1.5rem 1.5rem;
-      margin-bottom: 2rem;
-      border: 1px solid var(--rule);
-      position: relative;
-      overflow: hidden;
+      border-radius: 16px; padding: 1.3rem 1.4rem; margin-bottom: 1.5rem;
+      border: 1px solid var(--rule); position: relative; overflow: hidden;
     }
     .weekly-summary::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.06), transparent 70%);
-      pointer-events: none;
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(99,102,241,0.06), transparent 70%); pointer-events: none;
     }
     .weekly-summary h2 {
-      font-size: 0.78rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-      font-weight: 700;
+      font-size: 0.75rem; color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 0.7rem; font-weight: 700;
     }
-    .weekly-summary .summary-text {
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--ink2);
-    }
-    .weekly-summary .summary-text strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .weekly-summary .key-topics {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+    .weekly-summary .summary-text { font-size: 0.82rem; line-height: 1.8; color: var(--ink2); }
+    .weekly-summary .summary-text strong { color: var(--ink); font-weight: 600; }
+    .weekly-summary .key-topics { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.8rem; }
     .weekly-summary .topic-tag {
-      font-size: 0.68rem;
-      padding: 3px 10px;
-      border-radius: 6px;
-      background: var(--bg4);
-      color: var(--ink2);
-      border: 1px solid var(--rule);
+      font-size: 0.65rem; padding: 3px 9px; border-radius: 6px;
+      background: var(--bg4); color: var(--ink2); border: 1px solid var(--rule);
     }
 
-    /* === Filter Bar === */
+    /* === Daily Update Banner === */
+    .daily-banner {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(168,85,247,0.08));
+      border: 1px solid rgba(239,68,68,0.15); border-radius: 10px;
+      padding: 0.6rem 1rem; margin-bottom: 1rem;
+    }
+    .daily-banner .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: pulse 2s infinite; }
+    .daily-banner .text { font-size: 0.75rem; color: var(--ink2); }
+    .daily-banner .text strong { color: var(--red); font-weight: 700; }
+    .daily-banner .time { font-size: 0.68rem; color: var(--muted); margin-left: auto; }
+
+    /* === Filter === */
     .filter-bar {
-      display: flex;
-      gap: 0.35rem;
-      padding: 0.5rem 0 1rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      flex-wrap: wrap;
+      display: flex; gap: 0.3rem; padding: 0.3rem 0 0.8rem; overflow-x: auto; scrollbar-width: none; flex-wrap: wrap;
     }
     .filter-bar::-webkit-scrollbar { display: none; }
     .filter-btn {
-      background: var(--bg2);
-      border: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 0.73rem;
-      font-weight: 500;
-      padding: 0.35rem 0.8rem;
-      border-radius: 8px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-      flex-shrink: 0;
+      background: var(--bg2); border: 1px solid var(--rule); color: var(--muted);
+      font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.7rem; border-radius: 7px;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s; flex-shrink: 0;
     }
-    .filter-btn:hover {
-      border-color: var(--accent);
-      color: var(--ink);
-    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--ink); }
     .filter-btn.active {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-color: transparent;
-      color: #fff;
-      font-weight: 600;
+      border-color: transparent; color: #fff; font-weight: 600;
     }
 
     /* === Section === */
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
-    .section-header .bar {
-      width: 3px;
-      height: 18px;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
+    .section { margin-bottom: 1.5rem; }
+    .section-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .section-header .bar { width: 3px; height: 16px; border-radius: 2px; flex-shrink: 0; }
     .section-header .bar.tech { background: var(--accent); }
     .section-header .bar.finance { background: var(--green); }
     .section-header .bar.frontier { background: var(--purple); }
     .section-header .bar.intl { background: var(--accent2); }
     .section-header .bar.military { background: var(--red); }
-    .section-header h2 {
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-    .section-header .count {
-      font-size: 0.68rem;
-      color: var(--muted2);
-      margin-left: auto;
-    }
+    .section-header .bar.daily { background: var(--pink); }
+    .section-header h2 { font-size: 0.88rem; font-weight: 700; }
+    .section-header .count { font-size: 0.65rem; color: var(--muted2); margin-left: auto; }
 
     /* === News Card === */
     .news-card {
-      background: var(--bg2);
-      border-radius: 12px;
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid var(--rule);
-      transition: all 0.2s;
-      display: flex;
-      gap: 0.7rem;
+      background: var(--bg2); border-radius: 10px; padding: 0.8rem 0.9rem; margin-bottom: 0.4rem;
+      border: 1px solid var(--rule); transition: all 0.2s; display: flex; gap: 0.6rem;
     }
-    .news-card:hover {
-      background: var(--bg3);
-      border-color: var(--bg4);
-      transform: translateX(3px);
-    }
+    .news-card:hover { background: var(--bg3); border-color: var(--bg4); transform: translateX(2px); }
     .news-card.hidden { display: none; }
-    .news-card .priority-bar {
-      width: 3px;
-      border-radius: 2px;
-      flex-shrink: 0;
-      align-self: stretch;
-    }
+    .news-card .priority-bar { width: 3px; border-radius: 2px; flex-shrink: 0; align-self: stretch; }
     .news-card .priority-bar.high { background: var(--red); }
     .news-card .priority-bar.mid { background: var(--accent3); }
     .news-card .priority-bar.low { background: var(--green); }
-    .news-card .content {
-      flex: 1;
-      min-width: 0;
-    }
-    .news-card h3 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      line-height: 1.5;
-      margin-bottom: 0.2rem;
-    }
-    .news-card p {
-      font-size: 0.76rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .news-card .meta {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .news-card .tag {
-      font-size: 0.62rem;
-      padding: 2px 7px;
-      border-radius: 5px;
-      background: var(--bg4);
-      color: var(--muted);
-    }
-    .news-card .source-tag {
-      font-size: 0.6rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
+    .news-card .content { flex: 1; min-width: 0; }
+    .news-card h3 { font-size: 0.82rem; font-weight: 600; line-height: 1.45; margin-bottom: 0.15rem; }
+    .news-card p { font-size: 0.74rem; color: var(--muted); line-height: 1.55; }
+    .news-card .meta { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.4rem; flex-wrap: wrap; }
+    .news-card .tag { font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: var(--bg4); color: var(--muted); }
+    .news-card .source-tag { font-size: 0.58rem; color: var(--accent); font-weight: 600; }
     .news-card .new-badge {
-      font-size: 0.55rem;
-      padding: 1px 5px;
-      border-radius: 3px;
-      background: var(--red);
-      color: #fff;
-      font-weight: 700;
-      letter-spacing: 0.03em;
+      font-size: 0.53rem; padding: 1px 4px; border-radius: 3px;
+      background: var(--red); color: #fff; font-weight: 700; letter-spacing: 0.03em;
     }
 
     /* === No Result === */
-    .no-result {
-      display: none;
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--muted);
-    }
+    .no-result { display: none; text-align: center; padding: 2.5rem 1rem; color: var(--muted); }
     .no-result.show { display: block; }
 
     /* === Footer === */
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--rule);
-      text-align: center;
-    }
-    footer .sources-list {
-      font-size: 0.7rem;
-      color: var(--muted2);
-      margin-bottom: 0.6rem;
-      line-height: 1.8;
-    }
-    footer .brand {
-      font-size: 0.72rem;
-      color: var(--muted2);
-    }
+    footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); text-align: center; }
+    footer .sources-list { font-size: 0.68rem; color: var(--muted2); margin-bottom: 0.5rem; line-height: 1.8; }
+    footer .brand { font-size: 0.7rem; color: var(--muted2); }
     footer .brand strong {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    /* === Responsive === */
     @media (max-width: 600px) {
-      .hero h1 { font-size: 1.5rem; }
+      .hero h1 { font-size: 1.4rem; }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
-      .news-card { padding: 0.75rem 0.8rem; }
-      .news-card h3 { font-size: 0.8rem; }
+      .news-card { padding: 0.7rem 0.75rem; }
+      .news-card h3 { font-size: 0.78rem; }
     }
   </style>
 </head>
@@ -384,9 +234,11 @@
   <nav class="top-nav">
     <div class="top-nav-inner">
       <span class="logo">TechFin Weekly</span>
-      <span class="nav-date">2026.07.06 — 07.12</span>
+      <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      <span class="nav-date">7月12日</span>
       <span class="nav-spacer"></span>
-      <a class="nav-link" href="#weekly">本周总结</a>
+      <a class="nav-link" href="#weekly">周报</a>
+      <a class="nav-link" href="#daily">今日</a>
       <a class="nav-link" href="#tech">科技</a>
       <a class="nav-link" href="#finance">财经</a>
     </div>
@@ -396,612 +248,772 @@
 
     <!-- Hero -->
     <div class="hero">
-      <div class="week-badge">📡 第28周 · 7月第2周</div>
-      <h1>本周科技与财经<span class="gradient">全景回顾</span></h1>
-      <p class="sub">聚合头条、36氪、虎嗅、CSDN、TechCrunch、Reuters、Bloomberg 等20+平台，AI 筛选本周最重要的科技突破与财经动态。</p>
+      <div class="week-badge">📡 2026年第28周 · 7月第2周</div>
+      <h1>科技与财经<span class="gradient">周报 + 每日实时</span></h1>
+      <p class="sub">聚合全球 25+ 平台：头条 / 36氪 / 虎嗅 / CSDN / 新浪 / 网易 / TechCrunch / Reuters / Bloomberg / The Verge / Nature / Science 等，AI 全天筛选。</p>
     </div>
 
     <!-- Stats -->
     <div class="stats-row">
-      <div class="stat-box">
-        <div class="num">40+</div>
-        <div class="label">本周新闻条数</div>
-      </div>
-      <div class="stat-box">
-        <div class="num">20+</div>
-        <div class="label">信源平台</div>
-      </div>
-      <div class="stat-box">
-        <div class="num">5min</div>
-        <div class="label">阅读时间</div>
-      </div>
-      <div class="stat-box">
-        <div class="num">0</div>
-        <div class="label">广告</div>
-      </div>
+      <div class="stat-box"><div class="num">60+</div><div class="label">本周新闻</div></div>
+      <div class="stat-box"><div class="num">25+</div><div class="label">信源平台</div></div>
+      <div class="stat-box"><div class="num">5min</div><div class="label">阅读时间</div></div>
+      <div class="stat-box"><div class="num">0</div><div class="label">广告</div></div>
     </div>
 
-    <!-- Weekly Summary -->
-    <div class="weekly-summary" id="weekly">
-      <h2>📌 本周总结</h2>
-      <div class="summary-text">
-        <p><strong>AI 大模型赛道白热化：</strong>OpenAI 发布 GPT-5.6 三系列（Sol/Terra/Luna），私募估值冲至 8520 亿美元，并秘密筹备 7300 亿美元 IPO。但对手 Anthropic 年化收入已达 470 亿美元反超 OpenAI，Claude Code 两个月从 10 亿冲到 25 亿。谷歌 Gemini 3.5 Pro 定档 7 月 17 日，祭出 200 万 token 上下文+超低 API 价格抢开发者。智谱宣布"摸高计划"死磕 AGI，可灵 AI 完成 30 亿美元融资剑指港股。</p>
-        <br>
-        <p><strong>中国前沿科技"七箭齐发"：</strong>九章四号量子计算机比超算快 10⁵⁴ 倍；首条 8 英寸二维半导体工艺线贯通；长征十号乙火箭全球首次海上网系回收；曙光 8000 十万卡 AI 超集群落成；北大发布全球首款神经动力学芯片登《Science》；美团开源万亿参数 LongCat-2.0 证明国产算力可行；可控核聚变超导磁体全链路国产化。</p>
-        <br>
-        <p><strong>财经市场风起云涌：</strong>北向资金持仓创 3.13 万亿历史新高，风格转向硬科技。央行二季度例会释放宽松信号，2000 亿超长期特别国债全部下达。国常会划定新质生产力六大赛道：集成电路、航空航天、生物医药、低空经济、新型储能、智能机器人。中信证券半年净利预增 69.6%，券商板块估值修复。苹果起诉 OpenAI 人才战升级为法律战。</p>
-      </div>
-      <div class="key-topics">
-        <span class="topic-tag">GPT-5.6</span>
-        <span class="topic-tag">苹果 vs OpenAI</span>
-        <span class="topic-tag">九章四号</span>
-        <span class="topic-tag">曙光8000</span>
-        <span class="topic-tag">北向资金3.13万亿</span>
-        <span class="topic-tag">宇树IPO</span>
-        <span class="topic-tag">Gemini 3.5 Pro</span>
-        <span class="topic-tag">可灵AI 30亿融资</span>
-      </div>
+    <!-- Tab Switch -->
+    <div class="tab-switch">
+      <button class="tab-btn active" onclick="switchTab('weekly')">📋 本周总结</button>
+      <button class="tab-btn" onclick="switchTab('daily')">🔥 今日实时</button>
     </div>
 
-    <!-- Filter -->
-    <div class="filter-bar" id="filterBar">
-      <button class="filter-btn active" data-filter="all">全部</button>
-      <button class="filter-btn" data-filter="ai">🤖 AI/大模型</button>
-      <button class="filter-btn" data-filter="chip">💾 半导体</button>
-      <button class="filter-btn" data-filter="robot">🦾 机器人</button>
-      <button class="filter-btn" data-filter="frontier">🔬 前沿科技</button>
-      <button class="filter-btn" data-filter="finance">📊 财经</button>
-      <button class="filter-btn" data-filter="space">🚀 航天</button>
-      <button class="filter-btn" data-filter="energy">⚡ 能源</button>
-      <button class="filter-btn" data-filter="military">⚔️ 军事</button>
+    <!-- ========== WEEKLY ========== -->
+    <div id="weekly-panel">
+
+      <!-- Weekly Summary -->
+      <div class="weekly-summary" id="weekly">
+        <h2>📌 本周总结（7.6 — 7.12）</h2>
+        <div class="summary-text">
+          <p><strong>AI 大模型白热化：</strong>OpenAI 发布 GPT-5.6 三系列，估值 8520 亿美元，但 IPO 推迟至 2027 年，二号人物因病离职。Anthropic 年化收入 470 亿反超 OpenAI，Claude Code 两个月从 10 亿冲到 25 亿。谷歌 Gemini 3.5 Pro 定档 7/17，200 万 token 抢开发者。智谱"摸高计划"死磕 AGI，可灵 AI 30 亿美元融资。MiniMax 完成 160 亿港元融资，7 倍超额认购。</p>
+          <br>
+          <p><strong>中国前沿"七箭齐发"：</strong>九章四号量子计算机比超算快 10⁵⁴ 倍；首条 8 英寸二维半导体工艺线贯通；长征十号乙火箭全球首次海上网系回收；曙光 8000 十万卡 AI 超集群落成；北大神经动力学芯片登《Science》；美团 LongCat-2.0 证明国产算力可行；核聚变超导磁体全链路国产化。</p>
+          <br>
+          <p><strong>财经市场：</strong>北向资金持仓创 3.13 万亿新高转向硬科技。央行二季度例会释放宽松，8000 亿超长期特别国债下达。国常会划定新质生产力六大赛道。中信证券半年净利预增 69.6%。通富微电与 SK 海力士签 62.8 亿 HBM 大单。高盛上调 2031 年低轨卫星装机至 30.5 万颗（+634%）。</p>
+        </div>
+        <div class="key-topics">
+          <span class="topic-tag">GPT-5.6</span>
+          <span class="topic-tag">苹果 vs OpenAI</span>
+          <span class="topic-tag">Anthropic反超</span>
+          <span class="topic-tag">Gemini 3.5 Pro</span>
+          <span class="topic-tag">九章四号</span>
+          <span class="topic-tag">曙光8000</span>
+          <span class="topic-tag">北向3.13万亿</span>
+          <span class="topic-tag">宇树IPO</span>
+          <span class="topic-tag">可灵30亿</span>
+          <span class="topic-tag">MiniMax 160亿</span>
+        </div>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="ai">🤖 AI/大模型</button>
+        <button class="filter-btn" data-filter="chip">💾 半导体</button>
+        <button class="filter-btn" data-filter="robot">🦾 机器人</button>
+        <button class="filter-btn" data-filter="frontier">🔬 前沿</button>
+        <button class="filter-btn" data-filter="finance">📊 财经</button>
+        <button class="filter-btn" data-filter="space">🚀 航天</button>
+        <button class="filter-btn" data-filter="energy">⚡ 能源</button>
+        <button class="filter-btn" data-filter="military">⚔️ 军事</button>
+      </div>
+
+      <!-- 前沿科技 -->
+      <section class="section" id="frontier">
+        <div class="section-header">
+          <div class="bar frontier"></div>
+          <h2>🔬 前沿科技 · 中国</h2>
+          <span class="count">8 条</span>
+        </div>
+
+        <div class="news-card" data-cat="frontier">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>"九章四号"量子计算机：操纵 3050 光子，比超算快 10⁵⁴ 倍</h3>
+            <p>中科大光量子计算原型机首次操纵 3050 个光子量子态，生成样本仅需 25 微秒，超算需 10⁴² 年。中国成全球唯一在光量子和超导双路线均实现量子优越性的国家。论文发表于《Nature》。</p>
+            <div class="meta"><span class="tag">量子计算</span><span class="source-tag">Nature / 中科大</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="frontier energy">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>全国产超导磁体完工，可控核聚变 2030 年前发电</h3>
+            <p>中科院合肥物质科学研究院完成两款核聚变堆超导磁体验收，体积为 ITER 1.3 倍，储能 3 倍，全链路 100% 国产化。计划 2027 年底建成，2030 年前后发出第一度电。</p>
+            <div class="meta"><span class="tag">核聚变</span><span class="source-tag">中科院 / 新华社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip frontier">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>首条 8 英寸二维半导体工艺线贯通：给摩尔定律续命</h3>
+            <p>上海浦东，国内首条 8 英寸二维半导体工程化示范工艺线全线贯通。500 纳米工艺良率 >99.99%，今年下半年打通等效 90 纳米路径，明年推出对标流片代工。</p>
+            <div class="meta"><span class="tag">二维半导体</span><span class="source-tag">集微网 / 36氪</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="space">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>长征十号乙火箭海上网系回收：全球首次</h3>
+            <p>海南商业航天发射场，火箭一子级发射入轨后垂直返回，被海上"领航者"号平台网系捕获。与 SpaceX 垂直降落不同，中国用一张"网"接住火箭。回收箭体预计年底前复用飞行。</p>
+            <div class="meta"><span class="tag">商业航天</span><span class="source-tag">环球网 / 新华社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai chip">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>曙光 8000 十万卡 AI 超集群落成：全链路自研</h3>
+            <p>中国首个全国产十万卡 AI 超集群"曙光 8000"正式落成。芯片、计算、存储、网络、散热全链路自研，支持 FP64 到 INT8 全精度，已完成 300+ 超智融合应用优化。</p>
+            <div class="meta"><span class="tag">AI算力</span><span class="source-tag">科技日报 / 钛媒体</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai frontier">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>北大全球首款神经动力学芯片：脑机接口提速 478 倍</h3>
+            <p>北大杨玉超团队联合中科院上海微系统所，研制基于相变忆阻器的神经动力学芯片。单步时延 2.12 毫秒，脑皮层重建任务较 GPU 提速 50-478 倍。论文发表于《Science》。</p>
+            <div class="meta"><span class="tag">脑机接口</span><span class="source-tag">Science / 北大</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>美团开源万亿参数 LongCat-2.0：首个国产五万卡算力训练的万亿模型</h3>
+            <p>MoE 架构 1.6 万亿参数，激活 480 亿，支持 100 万 token 超长上下文。SWE-bench Pro 得分 59.5 超越 GPT-5.5 和 Claude Opus 4.6。</p>
+            <div class="meta"><span class="tag">开源大模型</span><span class="source-tag">CSDN / 36氪</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>华为"韬定律"：中国首次提出半导体产业新原则</h3>
+            <p>以"时间缩微"替代"几何缩微"，跳出西方主导的制程竞赛。过去六年已量产 381 款芯片。秋季麒麟芯片将首次采用逻辑折叠技术，面积仅 60%，功耗降至 59%。</p>
+            <div class="meta"><span class="tag">华为</span><span class="source-tag">虎嗅 / 钛媒体</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI/大模型 -->
+      <section class="section" id="ai">
+        <div class="section-header">
+          <div class="bar tech"></div>
+          <h2>🤖 AI / 大模型 · 全球</h2>
+          <span class="count">10 条</span>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>OpenAI GPT-5.6 Sol Ultra 证明 50 年数学猜想，IPO 推迟至 2027 年</h3>
+            <p>GPT-5.6 Sol Ultra 不到 1 小时生成"循环双覆盖猜想"完整证明。但 OpenAI IPO 推迟至 2027 年，二号人物因病恶化离职，ChatGPT 用户增长放缓，竞品压力加剧。</p>
+            <div class="meta"><span class="tag">GPT-5.6</span><span class="source-tag">IT之家 / 环球网 / TechCrunch</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>苹果起诉 OpenAI：400 名前苹果员工，人才战升级为法律战</h3>
+            <p>苹果指控 OpenAI 系统性窃取商业机密。OpenAI 回应称对其他公司商业秘密没有兴趣。马斯克趁势开喷："他把诈骗提升到全新高度。"</p>
+            <div class="meta"><span class="tag">苹果 vs OpenAI</span><span class="source-tag">Bloomberg / 新浪 / The Information</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>Anthropic 收入反超 OpenAI：年化 470 亿 vs 250-330 亿</h3>
+            <p>Claude Code 两个月从 10 亿冲到 25 亿以上年化收入。Anthropic 被曝与三星接触探索自研推理芯片。Anthropic 官方发文澄清"Claude 变笨"误区：坑你的不是模型，是努力度设置。</p>
+            <div class="meta"><span class="tag">Anthropic</span><span class="source-tag">Fortune / 新智元 / 新浪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>Gemini 3.5 Pro 定档 7/17：200 万 token + API 价格比 GPT-5.6 便宜 75%</h3>
+            <p>谷歌 Gemini 3.5 Pro 将于 7 月 17 日发布，200 万 token 上下文是当前模型两倍。Deep Think 模式锁定每月 250 美元 Ultra 套餐。7/17 同时是世界人工智能大会 WAIC 开幕日。</p>
+            <div class="meta"><span class="tag">Gemini</span><span class="source-tag">VentureBeat / Wired</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>智谱"摸高计划"：两年不追求短期变现，死磕 AGI</h3>
+            <p>智谱创始人唐杰发布内部信，列出四座高峰：长程任务、自治智能体系统、完全自我训练、极致安全治理。在行业卷应用卷收入当下，选择把资源压到最底层能力突破。</p>
+            <div class="meta"><span class="tag">智谱</span><span class="source-tag">36氪 / 钛媒体</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>可灵 AI 完成 30 亿美元融资，估值 180 亿美元剑指港股 IPO</h3>
+            <p>快手旗下 AI 视频生成业务，腾讯作为重要投资方入场，计划 12 个月内启动赴港 IPO。视频生成赛道从"秀技术"进入"拼商业估值"。</p>
+            <div class="meta"><span class="tag">可灵AI</span><span class="source-tag">Reuters / Bloomberg</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>MiniMax 完成 160 亿港元融资，7 倍超额认购</h3>
+            <p>百余家全球机构抢筹，长线资金借恐慌情绪逆势抄底头部 AI 资产。上市满六个月限售股解禁当天股价震荡，24 小时后完成新一轮融资。</p>
+            <div class="meta"><span class="tag">MiniMax</span><span class="source-tag">连线Insight / 新浪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>大摩高盛同时吹"AI 利润搬家"：从硬件转向云服务</h3>
+            <p>摩根士丹利首席策略师建议降低半导体超配，转向超大规模云服务商。恒生科技指数单日暴涨 4.97%，阿里巴巴暴涨 12.21%。中国 AI 贡献全球约 16% 营收但价值被低估。</p>
+            <div class="meta"><span class="tag">AI投资</span><span class="source-tag">吴晓波频道 / 新浪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>Meta Muse Image 引发隐私争议，Instagram 功能被迫下线</h3>
+            <p>Meta 发布 AI 图像模型 Muse Image，Instagram 上线 30+ "一键生成 AI 图像"效果，因隐私争议被喷到下线。同时 Meta 秘密研发"超级感知"AI 眼镜，LED 指示灯拟保持关闭。</p>
+            <div class="meta"><span class="tag">Meta</span><span class="source-tag">The Verge / 新浪 / TechCrunch</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>蚂蚁灵波开源 LingBot-World 2.0：14B 实现 720p/60fps 交互</h3>
+            <p>支持具身智能训练与自动驾驶仿真。同时发布 LingBot-VA 2.0 原生视频-动作模型，推理延迟压至 142ms。</p>
+            <div class="meta"><span class="tag">蚂蚁集团</span><span class="source-tag">雷锋网 / 36氪</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 机器人 -->
+      <section class="section" id="robot">
+        <div class="section-header">
+          <div class="bar tech"></div>
+          <h2>🦾 机器人 / 具身智能</h2>
+          <span class="count">7 条</span>
+        </div>
+
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>宇树科技 IPO 注册生效："人形机器人第一股"拟募 42 亿</h3>
+            <p>G1 机器人完成全球首例远程操控活体微创手术登《Nature》，首家直营店落地北京王府井。CIEI 2026 具身智能博览会预估国内市场规模达 1.09 万亿元。</p>
+            <div class="meta"><span class="tag">人形机器人</span><span class="source-tag">36氪 / 新华社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>智元机器人 21 亿收购上市公司，成立 2 年独角兽加速整合</h3>
+            <p>否认借壳。同期京东 RoboBase 在广州黄埔开工，总建面约 19 万平米。日本清水建设计划 2030 年将 AI 人形机器人引入建筑工地，承担粉刷、抹灰等任务。</p>
+            <div class="meta"><span class="tag">智元</span><span class="source-tag">IT之家 / 钛媒体 / 日经</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>英伟达 DreamDojo：4.4 万小时视频"想象"训练机器人</h3>
+            <p>ICML 2026 展示新框架，喂入人类视频训练机器人，免去真机损耗。宇树 G1 登《Nature》完成活体微创手术，证明通用人形可适配现有手术室。</p>
+            <div class="meta"><span class="tag">英伟达</span><span class="source-tag">IEEE Spectrum / Nature</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>优艾智合发布 FabriX + 人形机器人"隙锋"，落地 800+ 场景</h3>
+            <p>已在半导体/锂电落地 800+ 场景，"一脑多态"调度多形态机器人进厂。灵境智源完成超亿元融资，自研"德沃夏克"具身原生芯片与 OS 架构。</p>
+            <div class="meta"><span class="tag">工业机器人</span><span class="source-tag">36氪 / 虎嗅</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>珞石港交所上市 + 无界动力 K15 获全球首张 CE 认证</h3>
+            <p>珞石开盘涨逾 10% 市值破 110 亿港元。无界动力 K15 成全球首台获工业级全域 CE 认证的具身智能机器人。原力灵机发布通用具身基础模型 DM0.5 及 Apex 本体。</p>
+            <div class="meta"><span class="tag">珞石</span><span class="source-tag">财联社 / 36氪</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot ai">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>特斯拉 AI5 智驾芯片完成流片，兼顾 Optimus 机器人</h3>
+            <p>单芯片算力约 2500 TOPS，功耗与成本均低于竞品 Thor。小鹏 Robotaxi 启动员工内测，何小鹏称其为迈向"机器人汽车"的关键一步。</p>
+            <div class="meta"><span class="tag">特斯拉</span><span class="source-tag">Reuters / TechCrunch</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>速腾聚创上半年激光雷达交付 71.92 万台，机器人业务增 510%</h3>
+            <p>自研"创世"SPAD-SoC 芯片支撑车载+机器人双场景。比亚迪上半年英国销量 3.8 万辆同比近翻倍，登顶英国新能源品牌第一。</p>
+            <div class="meta"><span class="tag">速腾聚创</span><span class="source-tag">网易科技 / 36氪</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 半导体 -->
+      <section class="section" id="chip">
+        <div class="section-header">
+          <div class="bar tech"></div>
+          <h2>💾 半导体 / 芯片</h2>
+          <span class="count">7 条</span>
+        </div>
+
+        <div class="news-card" data-cat="chip finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>通富微电与 SK 海力士签 62.8 亿 HBM 大单，合作至 2030 年</h3>
+            <p>覆盖芯片堆叠封装、晶圆测试全链条。SK 海力士 ADR 上市首日涨 13%，市值突破 1.2 万亿美元。HBM 算力存储产业链基本面确定性进一步增强。</p>
+            <div class="meta"><span class="tag">HBM</span><span class="source-tag">财联社 / Bloomberg</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>美光 CEO：需求"前所未有"，看不到尽头，投资上调至 2500 亿美元</h3>
+            <p>美光将美国本土投资从 2000 亿上调至 2500 亿美元（至 2035 年），纽约州雪城新晶圆厂提前三个月完成首次混凝土浇筑。AI 智能体需要更长上下文推动内存需求。</p>
+            <div class="meta"><span class="tag">美光</span><span class="source-tag">新浪 / Fox Business</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>中国汽车芯片国产化率升至 18%，目标 2027 年达 30%</h3>
+            <p>工信部数据显示车规芯片国产化率三年从不足 5% 升至约 18%，功率半导体达 35%。比亚迪璇玑 A3、蔚来神玑 NX9031 已量产上车。格力自研芯片累计出货超 3.4 亿颗。</p>
+            <div class="meta"><span class="tag">车规芯片</span><span class="source-tag">工信部 / IT之家</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>英飞凌 50 亿欧元德累斯顿功率半导体厂投产</h3>
+            <p>全球最大功率半导体 Smart Power Fab 提前投产，主攻 AI 数据中心供电、新能源车及可再生能源芯片。苹果因 AI 算力建设挤占 DRAM 产能已上调 Mac/iPad 售价。</p>
+            <div class="meta"><span class="tag">英飞凌</span><span class="source-tag">IEEE Spectrum / Reuters</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>苹果与博通签 300 亿美元芯片协议，OpenAI 联手博通推 Jalapeño</h3>
+            <p>博通将在美国扩建芯片工厂。OpenAI 推出首款自研 AI 加速器 Jalapeño，Anthropic 接触三星探索自研推理芯片——头部 AI 公司加速向上游"定义算力"。</p>
+            <div class="meta"><span class="tag">博通</span><span class="source-tag">Bloomberg / Reuters</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>商务部对氦气实施出口禁令，美国拟放宽阿联酋 AI 芯片管制</h3>
+            <p>氦气是半导体晶圆制造关键材料。同时美国拟允许英伟达等向阿联酋供应先进 AI 芯片，助力中东算力建设。特斯拉限员工 AI 工具周花费不超 200 美元。</p>
+            <div class="meta"><span class="tag">出口管制</span><span class="source-tag">财联社 / 新华社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>AMD 苏姿丰：2027 年数据中心 AI 年营收达数百亿美元</h3>
+            <p>AMD 服务器 CPU Q2 同比增超 70%，将 2030 年服务器市场预期翻倍至 1200 亿美元。英伟达推出 AI 工厂收入分成新模式绑定长期 GPU 使用量。</p>
+            <div class="meta"><span class="tag">AMD</span><span class="source-tag">Reuters / Bloomberg</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 财经 -->
+      <section class="section" id="finance">
+        <div class="section-header">
+          <div class="bar finance"></div>
+          <h2>📊 财经 / 市场 · 全球</h2>
+          <span class="count">10 条</span>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>央行二季度例会释放宽松，8000 亿超长期特别国债全部下达</h3>
+            <p>继续实施适度宽松货币政策，保持流动性充裕，信贷重点投向科技创新、实体经济、小微与内需。6 万亿隐性债务置换额度临近收官。7/14 将发行 300 亿 20 年期特别国债。</p>
+            <div class="meta"><span class="tag">央行</span><span class="source-tag">新华社 / 财联社 / 新浪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>北向资金持仓创 3.13 万亿新高，风格转向硬科技</h3>
+            <p>前十大重仓股中硬科技占 7 席，消费龙头遭减仓，贵州茅台北向持仓环比降幅超 25%。光模块、光纤、MLCC 龙头回撤普遍突破 30%，资金从题材炒作向业绩龙头集中。</p>
+            <div class="meta"><span class="tag">北向资金</span><span class="source-tag">财联社 / Wind</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>国常会划定新质生产力六大赛道 + 专题部署 AI</h3>
+            <p>集成电路、航空航天、生物医药、低空经济、新型储能、智能机器人，配套研发费用加计扣除、产业专项低息贷款。国务院常务会议专题研究部署 AI 发展工作。</p>
+            <div class="meta"><span class="tag">新质生产力</span><span class="source-tag">新华社 / 36氪</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>中信证券半年净利预增 69.6%，券商板块估值修复</h3>
+            <p>净利润 233.43 亿元，连续两季度百亿级盈利。经纪、投行、资管、自营四大业务全线回暖。上交所一周查处 277 起异常交易，短线炒作情绪降温。</p>
+            <div class="meta"><span class="tag">券商</span><span class="source-tag">财联社 / Wind</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance space">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>高盛上调 2031 年低轨卫星至 30.5 万颗（+634%）</h3>
+            <p>长征十号乙实现 LNG 制备高纯甲烷燃料工程化，大幅降低发射成本。SpaceX 官宣 2027 年发射首批 AI 卫星，五年登陆火星，十年建月球基地。卫星互联网千亿空间打开。</p>
+            <div class="meta"><span class="tag">商业航天</span><span class="source-tag">Bloomberg / 高盛</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance energy">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>"十五五"双碳方案：2030 年抽水蓄能 1.6 亿千瓦 + 储能 3 亿千瓦</h3>
+            <p>大力发展虚拟电厂、源网荷储一体化。前 5 月船舶出口 1700 亿元同比增长 22.5%。沪东中华交付两艘 17.4 万立方米超大型 LNG 运输船。</p>
+            <div class="meta"><span class="tag">双碳</span><span class="source-tag">新华社 / 财联社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>美联储降息预期推迟至 12 月，OpenAI 二号人物离职冲击 IPO</h3>
+            <p>加拿大皇家银行将美联储降息时点由 9 月推迟至 12 月，通胀粘性+就业韧性拖累宽松节奏。美元指数企稳在 101.38。7/29 美联储议息会议为全月最大风险节点。</p>
+            <div class="meta"><span class="tag">美联储</span><span class="source-tag">Reuters / Bloomberg / 环球网</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>美股三大指数收跌，日经回落，比特币 6 万美元</h3>
+            <p>道指-0.63%，纳指-0.22%，标普-0.33%。费城半导体单日涨 3.06%。日本 TOPIX 连续 6 日收涨创最长连涨纪录。贝莱德 ETH 基金单日净流入 3.2 亿美元创历史新高。</p>
+            <div class="meta"><span class="tag">美股</span><span class="source-tag">Bloomberg / Reuters</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>A 股中报季：朗特智能预增 176%，牧原预亏 67 亿</h3>
+            <p>高预增集中在电子制造领域。诚志股份同比暴增超 12 倍。生猪养殖板块亏损扩大。五矿发展完成 281 亿元铁矿资产置入。创新药出海上半年授权接近千亿美元。</p>
+            <div class="meta"><span class="tag">中报</span><span class="source-tag">Wind / 财联社</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>多国推进去美元化，金砖/中东/亚洲非美元贸易结算扩容</h3>
+            <p>欧洲央行维持货币政策观望态度。全球贸易关税议题升温，新一轮关税计划引发通胀和供应链成本上行担忧。中东局势带来原油供给担忧，布伦特原油 70.36 美元/桶（+2.51%）。</p>
+            <div class="meta"><span class="tag">全球宏观</span><span class="source-tag">Reuters / Bloomberg</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 军事 -->
+      <section class="section" id="military">
+        <div class="section-header">
+          <div class="bar military"></div>
+          <h2>⚔️ 军事科技</h2>
+          <span class="count">3 条</span>
+        </div>
+
+        <div class="news-card" data-cat="military">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>美太空军列装"草地"电磁辐射武器：可致盲敌方卫星</h3>
+            <p>首批非动能系统服役，可对敌方卫星实施可逆式电磁致盲与干扰。英国斥 20 亿英镑建 AI 作战实验室，依托智能技术重塑现代战场演习模式。</p>
+            <div class="meta"><span class="tag">太空军</span><span class="source-tag">环球网 / Defense News</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="military">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>美军 AI 算法 + 无人蜂群重构作战体系</h3>
+            <p>五角大楼依托 AI 算法、全域卫星感知和无人蜂群作战，重构对华不对称压制能力。乌军在顿巴斯实测人形作战机器人 Phantom MK-1。</p>
+            <div class="meta"><span class="tag">军事AI</span><span class="source-tag">环球网 / Defense News</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="military energy">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>英伟达 Blackwell AI 芯片直连先进核反应堆</h3>
+            <p>英伟达在犹他州试点 Blackwell AI 芯片直连先进核反应堆，为高密度 AI 数据中心提供专属稳定能源，突破传统电网供电瓶颈。</p>
+            <div class="meta"><span class="tag">核能</span><span class="source-tag">IEEE Spectrum / Reuters</span></div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- 前沿科技 -->
-    <section class="section" id="frontier">
-      <div class="section-header">
-        <div class="bar frontier"></div>
-        <h2>🔬 前沿科技 · 中国</h2>
-        <span class="count">8 条</span>
+    <!-- ========== DAILY PANEL ========== -->
+    <div id="daily-panel" style="display:none;">
+
+      <!-- Daily Banner -->
+      <div class="daily-banner">
+        <div class="live-dot"></div>
+        <div class="text"><strong>今日实时</strong> · 7月12日更新</div>
+        <div class="time" id="updateTime">更新中</div>
       </div>
 
-      <div class="news-card" data-cat="frontier">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>"九章四号"量子计算机：操纵 3050 光子，比超算快 10⁵⁴ 倍</h3>
-          <p>中科大光量子计算原型机首次操纵 3050 个光子量子态，生成样本仅需 25 微秒，超算需 10⁴² 年。中国成全球唯一在光量子和超导双路线均实现量子优越性的国家。论文发表于《Nature》。</p>
-          <div class="meta">
-            <span class="tag">量子计算</span>
-            <span class="source-tag">来源：Nature / 中科大</span>
-            <span class="new-badge">NEW</span>
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="ai">🤖 AI</button>
+        <button class="filter-btn" data-filter="chip">💾 芯片</button>
+        <button class="filter-btn" data-filter="robot">🦾 机器人</button>
+        <button class="filter-btn" data-filter="finance">📊 财经</button>
+        <button class="filter-btn" data-filter="space">🚀 航天</button>
+        <button class="filter-btn" data-filter="energy">⚡ 能源</button>
+        <button class="filter-btn" data-filter="military">⚔️ 军事</button>
+      </div>
+
+      <!-- 今日科技 -->
+      <section class="section" id="daily-tech">
+        <div class="section-header">
+          <div class="bar daily"></div>
+          <h2>🔥 今日科技 · 7月12日</h2>
+          <span class="count">10 条</span>
+        </div>
+
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>GPT-5.6 Sol Ultra 不到1小时证明50年数学猜想</h3>
+            <p>成功生成"循环双覆盖猜想"完整证明，这一图论难题悬而未决50多年。OpenAI 已将证明发布到 CDN，整套数学证明均由 AI 独立完成。</p>
+            <div class="meta"><span class="tag">GPT-5.6</span><span class="source-tag">IT之家 / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="frontier">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>全国产超导磁体完工，可控核聚变 2030 年前发电</h3>
-          <p>中科院合肥物质科学研究院完成两款核聚变堆超导磁体验收，体积为 ITER 1.3 倍，储能 3 倍，全链路 100% 国产化。计划 2027 年底建成，2030 年前后发出第一度电。</p>
-          <div class="meta">
-            <span class="tag">核聚变</span>
-            <span class="source-tag">来源：中科院 / 新华社</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>马斯克开喷奥尔特曼："他把诈骗提升到全新高度"</h3>
+            <p>GPT-5.6 上线之际，马斯克转发 X 平台帖文点名奥尔特曼。同日苹果起诉 OpenAI 盗取商业机密，OpenAI IPO 推迟至 2027 年，二号人物因病离职。</p>
+            <div class="meta"><span class="tag">OpenAI</span><span class="source-tag">新浪 / 环球网 / Bloomberg</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="chip">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>首条 8 英寸二维半导体工艺线贯通：给摩尔定律续命</h3>
-          <p>上海浦东，国内首条 8 英寸二维半导体工程化示范工艺线全线贯通。500 纳米工艺良率 >99.99%，今年下半年打通等效 90 纳米路径，明年推出对标流片代工。</p>
-          <div class="meta">
-            <span class="tag">二维半导体</span>
-            <span class="source-tag">来源：集微网 / 36氪</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>Anthropic 澄清"Claude 变笨"：坑你的不是模型，是努力度设置</h3>
+            <p>官方发文称用户混淆了"模型选择"和"努力度"两个选项。Anthropic 年化收入 470 亿反超 OpenAI，Claude Code 两个月从 10 亿冲到 25 亿。</p>
+            <div class="meta"><span class="tag">Anthropic</span><span class="source-tag">新智元 / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="space">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>长征十号乙火箭海上网系回收：全球首次，走不同路线</h3>
-          <p>海南商业航天发射场，火箭一子级发射入轨后垂直返回，被海上"领航者"号平台网系捕获。与 SpaceX 垂直降落不同，中国用一张"网"接住火箭。回收箭体预计年底前复用飞行。</p>
-          <div class="meta">
-            <span class="tag">商业航天</span>
-            <span class="source-tag">来源：环球网 / 新华社</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>MiniMax 完成 160 亿港元融资，7 倍超额认购</h3>
+            <p>百余家全球机构抢筹，长线资金借解禁恐慌逆势抄底。上市满六个月限售股解禁当天股价震荡，24 小时后完成新一轮融资。</p>
+            <div class="meta"><span class="tag">MiniMax</span><span class="source-tag">连线Insight / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai chip">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>曙光 8000 十万卡 AI 超集群落成：全链路自研</h3>
-          <p>中国首个全国产十万卡 AI 超集群"曙光 8000"正式落成。芯片、计算、存储、网络、散热全链路自研，支持 FP64 到 INT8 全精度，已完成 300+ 超智融合应用优化。</p>
-          <div class="meta">
-            <span class="tag">AI算力</span>
-            <span class="source-tag">来源：科技日报 / 钛媒体</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>大摩高盛同时吹"AI 利润搬家"：恒生科技暴涨 4.97%</h3>
+            <p>摩根士丹利建议降低半导体超配转向云服务商。阿里巴巴暴涨 12.21% 创近一年最大单日涨幅。中国 AI 贡献全球约 16% 营收但价值被低估。</p>
+            <div class="meta"><span class="tag">AI投资</span><span class="source-tag">吴晓波频道 / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai frontier">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>北大发布全球首款神经动力学芯片：脑机接口提速 478 倍</h3>
-          <p>北大杨玉超团队联合中科院上海微系统所，研制基于相变忆阻器的神经动力学芯片。单步时延 2.12 毫秒，脑皮层重建任务较 GPU 提速 50-478 倍。论文发表于《Science》。</p>
-          <div class="meta">
-            <span class="tag">脑机接口</span>
-            <span class="source-tag">来源：Science / 北大</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>Meta Muse Image 被喷到下线，Instagram AI 功能紧急撤回</h3>
+            <p>Instagram 上线 30+ "一键生成 AI 图像"效果引发隐私争议。Meta 秘密研发"超级感知"AI 眼镜，LED 指示灯拟保持关闭，持续录音+每秒拍照。</p>
+            <div class="meta"><span class="tag">Meta</span><span class="source-tag">The Verge / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>美团开源万亿参数 LongCat-2.0：首个国产五万卡算力训练的万亿模型</h3>
-          <p>MoE 架构 1.6 万亿参数，激活 480 亿，支持 100 万 token 超长上下文。SWE-bench Pro 得分 59.5 超越 GPT-5.5 和 Claude Opus 4.6，证明国产芯片也能训练万亿大模型。</p>
-          <div class="meta">
-            <span class="tag">开源大模型</span>
-            <span class="source-tag">来源：CSDN / 36氪</span>
+        <div class="news-card" data-cat="chip">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>美光 CEO：需求"前所未有"看不到尽头，投资上调至 2500 亿美元</h3>
+            <p>美光将美国本土投资从 2000 亿上调至 2500 亿美元（至 2035 年），纽约州雪城新晶圆厂提前三个月完成混凝土浇筑。AI 智能体需要更长上下文推动需求。</p>
+            <div class="meta"><span class="tag">美光</span><span class="source-tag">新浪 / Fox Business</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="chip">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>华为"韬定律"：中国首次提出半导体产业新原则</h3>
-          <p>以"时间缩微"替代"几何缩微"，跳出西方主导的制程竞赛。过去六年已量产 381 款芯片。秋季麒麟芯片将首次采用逻辑折叠技术，面积仅 60%，功耗降至 59%。</p>
-          <div class="meta">
-            <span class="tag">华为</span>
-            <span class="source-tag">来源：虎嗅 / 钛媒体</span>
+        <div class="news-card" data-cat="robot">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>日本清水建设 2030 年将 AI 人形机器人引入建筑工地</h3>
+            <p>计划让机器人承担粉刷、抹灰等施工任务，缓解建筑行业劳动力短缺。建筑工地存在大量台阶，轮式机器人受限，人形机器人更适合。</p>
+            <div class="meta"><span class="tag">建筑机器人</span><span class="source-tag">日经亚洲 / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- AI/大模型 -->
-    <section class="section" id="ai">
-      <div class="section-header">
-        <div class="bar tech"></div>
-        <h2>🤖 AI / 大模型 · 国际</h2>
-        <span class="count">8 条</span>
-      </div>
-
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>OpenAI 发布 GPT-5.6 三系列，私募估值达 8520 亿美元</h3>
-          <p>Sol/Terra/Luna 三款模型发布，Sol 版代理编程 Token 效率提升 54%。同时秘密筹备 IPO，高盛大摩操刀，目标 9 月上市，估值约 7300 亿美元，将是史上最大科技 IPO。</p>
-          <div class="meta">
-            <span class="tag">GPT-5.6</span>
-            <span class="source-tag">来源：TechCrunch / Reuters</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="ai chip">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>特斯拉限员工 AI 工具周花费 200 美元（xAI 除外）</h3>
+            <p>内部备忘录显示特斯拉 7 月 6 日起限制第三方 AI 工具费用每周不超 200 美元，反映企业级 AI Token 消耗成本压力引发管控。OpenAI 联手博通推出 AI 加速器 Jalapeño。</p>
+            <div class="meta"><span class="tag">特斯拉</span><span class="source-tag">The Information / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>苹果正式起诉 OpenAI：400 名前苹果员工，人才战升级为法律战</h3>
-          <p>苹果指控 OpenAI 系统性窃取商业机密，前高级工程师离职后多次登录内网下载数百份保密文件。OpenAI 回应称对其他公司商业秘密没有兴趣。同周 OpenAI 正筹备 IPO。</p>
-          <div class="meta">
-            <span class="tag">苹果 vs OpenAI</span>
-            <span class="source-tag">来源：Bloomberg / The Information</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>蚂蚁灵波 LingBot-VA 2.0：原生视频-动作模型延迟压至 142ms</h3>
+            <p>视觉预测与动作生成合一训练。同时开源 LingBot-World 2.0 实时世界模型，14B 权重实现 720p/60fps 低延迟交互，支持具身智能训练与自动驾驶仿真。</p>
+            <div class="meta"><span class="tag">蚂蚁集团</span><span class="source-tag">雷锋网 / 36氪</span></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>Anthropic 收入反超 OpenAI：年化 470 亿 vs 250-330 亿</h3>
-          <p>Claude Code 两个月内从 10 亿冲到 25 亿以上年化收入。Anthropic 被曝与三星接触探索自研推理芯片，此前 OpenAI 已联手博通推出 AI 加速器 Jalapeño。</p>
-          <div class="meta">
-            <span class="tag">Anthropic</span>
-            <span class="source-tag">来源：The Information / Fortune</span>
+      <!-- 今日财经 -->
+      <section class="section" id="daily-finance">
+        <div class="section-header">
+          <div class="bar finance"></div>
+          <h2>📊 今日财经 · 7月12日</h2>
+          <span class="count">8 条</span>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>央行二季度例会定调：适度宽松，综合融资成本维持低位</h3>
+            <p>保持流动性充裕，稳定人民币汇率。信贷重点投向科技创新、内需、小微领域。6万亿隐性债务置换额度临近收官。7/14 发行 300 亿 20 年期特别国债。</p>
+            <div class="meta"><span class="tag">央行</span><span class="source-tag">财联社 / 新华社 / 新浪</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>Gemini 3.5 Pro 定档 7 月 17 日：200 万 token 上下文+超低价格</h3>
-          <p>谷歌 Gemini 3.5 Pro 将于 7 月 17 日发布，200 万 token 上下文是当前模型两倍。Deep Think 推理模式锁定每月 250 美元 Ultra 套餐，API 价格比 GPT-5.6 便宜 75%。</p>
-          <div class="meta">
-            <span class="tag">Gemini</span>
-            <span class="source-tag">来源：VentureBeat / Wired</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>"十五五"碳达峰方案落地：储能 3 亿千瓦 + 抽水蓄能 1.6 亿千瓦</h3>
+            <p>大力发展虚拟电厂、源网荷储一体化。利好储能、绿电、电网产业链。发改委落实 2000 亿"两新"设备更新资金覆盖上万个制造业技改项目。</p>
+            <div class="meta"><span class="tag">双碳</span><span class="source-tag">新华社 / 财联社</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>智谱"摸高计划"：死磕 AGI，两年不追求短期变现</h3>
-          <p>智谱创始人唐杰发布内部信，列出四座高峰：长程任务、自治智能体系统、完全自我训练、极致安全治理。在行业卷应用卷收入当下，选择把资源压到最底层能力突破。</p>
-          <div class="meta">
-            <span class="tag">智谱</span>
-            <span class="source-tag">来源：36氪 / 钛媒体</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>沪深交易所收紧北向程序化交易监管，7 月新规落地</h3>
+            <p>将沪深股通外资纳入程序化交易报备范围，内外资监管标准统一，抑制市场日内剧烈波动，利好长线机构资金。主板 ST 股涨跌幅限制由 5% 放宽至 10%。</p>
+            <div class="meta"><span class="tag">监管</span><span class="source-tag">财联社 / Wind</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>可灵 AI 完成 30 亿美元融资，估值 180 亿美元剑指港股 IPO</h3>
-          <p>快手旗下 AI 视频生成业务可灵 AI 即将完成 30 亿美元融资，腾讯作为重要投资方入场，计划 12 个月内启动赴港 IPO。视频生成赛道从"秀技术"进入"拼商业估值"。</p>
-          <div class="meta">
-            <span class="tag">可灵AI</span>
-            <span class="source-tag">来源：Reuters / Bloomberg</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>美联储降息推迟至 12 月，7/29 议息为最大风险节点</h3>
+            <p>加拿大皇家银行将降息时点由 9 月推迟至 12 月，通胀粘性+就业韧性拖累宽松节奏。美元指数企稳 101.38。7/14 美国 6 月通胀数据发布。</p>
+            <div class="meta"><span class="tag">美联储</span><span class="source-tag">Reuters / Bloomberg</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>Meta 秘密研发"超级感知"AI 眼镜，引发隐私争议</h3>
-          <p>Meta 研发的 AI 眼镜可持续录音+每秒拍照提取元数据供 AI 查询，LED 指示灯拟保持关闭。同时 Meta 自研 AI 芯片将于 9 月量产，采用模块化设计应对 AI 快速迭代。</p>
-          <div class="meta">
-            <span class="tag">Meta</span>
-            <span class="source-tag">来源：The Verge / TechCrunch</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>中报季密集披露：诚志股份预增超 12 倍，牧原预亏 67 亿</h3>
+            <p>朗特智能净利预增 176%，台华新材预增 151%，捷捷微电预增 135%。生猪养殖板块亏损扩大。五矿发展完成 281 亿元铁矿资产置入重大重组。</p>
+            <div class="meta"><span class="tag">中报</span><span class="source-tag">Wind / 财联社</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="ai">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>蚂蚁灵波开源 LingBot-World 2.0 实时世界模型</h3>
-          <p>支持具身智能训练与自动驾驶仿真，14B 权重实现 720p/60fps 低延迟交互。同时发布 LingBot-VA 2.0 原生视频-动作模型，推理延迟压至 142ms。</p>
-          <div class="meta">
-            <span class="tag">蚂蚁集团</span>
-            <span class="source-tag">来源：雷锋网 / 36氪</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>美股收跌：道指-0.63%，费城半导体逆势涨 3.06%</h3>
+            <p>纳指-0.22%，标普-0.33%。谷歌、特斯拉上涨，AI 龙头震荡走弱。日本 TOPIX 连续 6 日收涨创最长连涨纪录。日元跌至 40 年低位 162.50。</p>
+            <div class="meta"><span class="tag">美股</span><span class="source-tag">Bloomberg / Reuters</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 机器人/具身智能 -->
-    <section class="section" id="robot">
-      <div class="section-header">
-        <div class="bar tech"></div>
-        <h2>🦾 机器人 / 具身智能</h2>
-        <span class="count">7 条</span>
-      </div>
-
-      <div class="news-card" data-cat="robot">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>宇树科技 IPO 注册生效："人形机器人第一股"拟募 42 亿</h3>
-          <p>G1 机器人完成全球首例远程操控活体微创手术登《Nature》，首家直营店落地北京王府井。CIEI 2026 具身智能博览会预估国内市场规模达 1.09 万亿元。</p>
-          <div class="meta">
-            <span class="tag">人形机器人</span>
-            <span class="source-tag">来源：36氪 / 新华社</span>
+        <div class="news-card" data-cat="finance energy">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>布伦特原油 70.36 美元/桶（+2.51%），黄金高位运行</h3>
+            <p>中东局势升温推升油价波动。IEA 称全球成品油供需偏紧，炼油利润走高。COMEX 黄金受避险需求支撑维持强势。比特币承压回落至 6 万美元。</p>
+            <div class="meta"><span class="tag">大宗商品</span><span class="source-tag">Bloomberg / Reuters</span><span class="new-badge">NEW</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="robot">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>智元机器人 21 亿收购上市公司，加速产业链整合</h3>
-          <p>成立仅 2 年的具身智能独角兽大手笔并购，否认借壳。同期京东 RoboBase 在广州黄埔开工，总建面约 19 万平米打造高端智能装备基地。</p>
-          <div class="meta">
-            <span class="tag">智元</span>
-            <span class="source-tag">来源：IT之家 / 钛媒体</span>
-            <span class="new-badge">NEW</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>贝莱德 ETH 基金单日净流入 3.2 亿美元创历史新高</h3>
+            <p>持仓突破 200 万枚以太坊。多国推进去美元化，金砖、中东、亚洲区域非美元贸易结算持续扩容。全球贸易关税议题升温引发通胀担忧。</p>
+            <div class="meta"><span class="tag">加密货币</span><span class="source-tag">Bloomberg / Reuters</span></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="news-card" data-cat="robot">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>优艾智合发布工业具身大模型 FabriX + 人形机器人"隙锋"</h3>
-          <p>已在半导体/锂电落地 800+ 场景，"一脑多态"调度多形态机器人进厂。灵境智源完成超亿元融资，自研"德沃夏克"具身原生芯片与 OS 架构。</p>
-          <div class="meta">
-            <span class="tag">工业机器人</span>
-            <span class="source-tag">来源：36氪 / 虎嗅</span>
+      <!-- 本周关键时间窗口 -->
+      <section class="section">
+        <div class="section-header">
+          <div class="bar daily"></div>
+          <h2>📅 本周关键时间</h2>
+          <span class="count">4 条</span>
+        </div>
+
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>7月14日：美国6月通胀数据 + 300亿20年期特别国债发行</h3>
+            <p>美国 CPI 数据将重新校准美联储降息预期。同时国内发行 300 亿元 20 年期超长期特别国债。</p>
+            <div class="meta"><span class="tag">关键日期</span><span class="source-tag">财联社 / Reuters</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="robot ai">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>英伟达发布 DreamDojo 具身智能模型：4.4 万小时视频训练机器人</h3>
-          <p>ICML 2026 展示新框架，喂入 4.4 万小时人类视频"想象"训练机器人，免去真机损耗。宇树 G1 登《Nature》完成活体微创手术，证明通用人形可适配现有手术室。</p>
-          <div class="meta">
-            <span class="tag">英伟达</span>
-            <span class="source-tag">来源：IEEE Spectrum / Nature</span>
+        <div class="news-card" data-cat="ai">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>7月17日：WAIC 世界人工智能大会开幕 + Gemini 3.5 Pro 发布</h3>
+            <p>同一天两件大事：世界人工智能大会在上海开幕，谷歌 Gemini 3.5 Pro 正式发布。</p>
+            <div class="meta"><span class="tag">关键日期</span><span class="source-tag">36氪 / VentureBeat</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="robot">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>珞石机器人港交所上市 + 无界动力 K15 获全球首张 CE 认证</h3>
-          <p>珞石开盘涨逾 10% 市值破 110 亿港元。无界动力 K15 成全球首台获工业级全域 CE 认证的具身智能机器人。原力灵机发布通用具身基础模型 DM0.5 及 Apex 本体。</p>
-          <div class="meta">
-            <span class="tag">珞石</span>
-            <span class="source-tag">来源：财联社 / 36氪</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>7月下旬：A 股半年报集中披露</h3>
+            <p>各大上市公司密集发布半年报，板块分化特征明显。电子制造、消费材料领域高预增，生猪养殖亏损扩大。</p>
+            <div class="meta"><span class="tag">关键日期</span><span class="source-tag">Wind / 财联社</span></div>
           </div>
         </div>
-      </div>
 
-      <div class="news-card" data-cat="robot ai">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>特斯拉自研 AI5 智驾芯片完成流片，兼顾 Optimus 人形机器人</h3>
-          <p>单芯片算力约 2500 TOPS，兼顾 Optimus 人形机器人大脑，功耗与成本均低于竞品 Thor。小鹏 Robotaxi 启动员工内测，何小鹏称其为迈向"机器人汽车"的关键一步。</p>
-          <div class="meta">
-            <span class="tag">特斯拉</span>
-            <span class="source-tag">来源：Reuters / TechCrunch</span>
+        <div class="news-card" data-cat="finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>7月29日：美联储议息会议（全月最大风险节点）</h3>
+            <p>市场密切关注美联储利率决议和后续政策指引。降息预期变化将影响全球资产定价。</p>
+            <div class="meta"><span class="tag">关键日期</span><span class="source-tag">Bloomberg / Reuters</span></div>
           </div>
         </div>
-      </div>
-
-      <div class="news-card" data-cat="robot">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>速腾聚创上半年激光雷达交付 71.92 万台，机器人业务增 510%</h3>
-          <p>自研"创世"SPAD-SoC 芯片支撑车载+机器人双场景。比亚迪上半年英国累计销 3.8 万辆同比近翻倍，登顶英国新能源品牌第一。</p>
-          <div class="meta">
-            <span class="tag">速腾聚创</span>
-            <span class="source-tag">来源：网易科技 / 36氪</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 半导体/芯片 -->
-    <section class="section" id="chip">
-      <div class="section-header">
-        <div class="bar tech"></div>
-        <h2>💾 半导体 / 芯片</h2>
-        <span class="count">6 条</span>
-      </div>
-
-      <div class="news-card" data-cat="chip finance">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>通富微电与 SK 海力士签 62.8 亿 HBM 封测大单，合作至 2030 年</h3>
-          <p>覆盖芯片堆叠封装、晶圆测试全链条服务。SK 海力士 ADR 上市首日涨 13%，市值突破 1.2 万亿美元。HBM 算力存储产业链基本面确定性进一步增强。</p>
-          <div class="meta">
-            <span class="tag">HBM</span>
-            <span class="source-tag">来源：财联社 / Bloomberg</span>
-            <span class="new-badge">NEW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="chip">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>中国汽车芯片国产化率升至 18%，目标 2027 年达 30%</h3>
-          <p>工信部数据显示车规芯片国产化率三年从不足 5% 升至约 18%，功率半导体达 35%。比亚迪璇玑 A3、蔚来神玑 NX9031 已量产上车。格力自研芯片累计出货超 3.4 亿颗。</p>
-          <div class="meta">
-            <span class="tag">车规芯片</span>
-            <span class="source-tag">来源：工信部 / IT之家</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="chip">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>英飞凌 50 亿欧元德累斯顿功率半导体厂投产</h3>
-          <p>全球最大功率半导体 Smart Power Fab 提前投产，主攻 AI 数据中心供电、新能源车及可再生能源芯片。苹果因 AI 算力建设挤占 DRAM 产能已上调 Mac/iPad 售价。</p>
-          <div class="meta">
-            <span class="tag">英飞凌</span>
-            <span class="source-tag">来源：IEEE Spectrum / Reuters</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="chip ai">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>苹果与博通签 300 亿美元长期芯片采购协议</h3>
-          <p>博通将在美国扩建芯片工厂。同周 OpenAI 联手博通推出首款自研 AI 加速器 Jalapeño，Anthropic 接触三星探索自研推理芯片——头部 AI 公司加速向上游"定义算力"。</p>
-          <div class="meta">
-            <span class="tag">博通</span>
-            <span class="source-tag">来源：Bloomberg / Reuters</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="chip finance">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>商务部对氦气实施临时禁止出口，保障半导体供应链</h3>
-          <p>氦气是半导体晶圆制造、光刻检测的关键稀有材料。美国拟放宽对阿联酋 AI 芯片出口管制，允许英伟达等厂商供应先进 AI 芯片助力中东算力建设。</p>
-          <div class="meta">
-            <span class="tag">出口管制</span>
-            <span class="source-tag">来源：财联社 / 新华社</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="chip">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>AMD 苏姿丰：2027 年数据中心 AI 年营收达数百亿美元</h3>
-          <p>AMD 服务器 CPU Q2 同比增超 70%，将 2030 年服务器市场预期翻倍至 1200 亿美元。英伟达推出 AI 工厂收入分成新模式绑定长期 GPU 使用量。</p>
-          <div class="meta">
-            <span class="tag">AMD</span>
-            <span class="source-tag">来源：Reuters / Bloomberg</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 财经动态 -->
-    <section class="section" id="finance">
-      <div class="section-header">
-        <div class="bar finance"></div>
-        <h2>📊 财经 / 市场</h2>
-        <span class="count">8 条</span>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>北向资金持仓创 3.13 万亿历史新高，风格转向硬科技</h3>
-          <p>前十大重仓股中硬科技标的占 7 席，消费龙头遭减仓，贵州茅台北向持仓环比降幅超 25%。光模块、光纤、MLCC 龙头回撤普遍突破 30%，资金从题材炒作向有业绩支撑的龙头集中。</p>
-          <div class="meta">
-            <span class="tag">北向资金</span>
-            <span class="source-tag">来源：财联社 / Wind</span>
-            <span class="new-badge">NEW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>央行二季度例会释放宽松信号，2000 亿超长期特别国债全部下达</h3>
-          <p>资金投向算力基础设施、工业设备更新、城乡物流、养老改造等 1.1 万个实体项目。央行与金融监管总局将部分房地产金融政策期限延长至 2026 年底。</p>
-          <div class="meta">
-            <span class="tag">央行</span>
-            <span class="source-tag">来源：新华社 / 财联社</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar high"></div>
-        <div class="content">
-          <h3>国常会划定新质生产力六大赛道</h3>
-          <p>集成电路、航空航天、生物医药、低空经济、新型储能、智能机器人，配套研发费用加计扣除、产业专项低息贷款持续落地。国务院常务会议专题研究部署 AI 发展工作。</p>
-          <div class="meta">
-            <span class="tag">新质生产力</span>
-            <span class="source-tag">来源：新华社 / 36氪</span>
-            <span class="new-badge">NEW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>中信证券半年净利预增 69.6%，券商板块估值修复</h3>
-          <p>净利润预计 233.43 亿元，连续两个季度突破百亿。经纪、投行、资管、自营四大业务全线回暖。监管严打异常交易，上交所一周查处 277 起，短线炒作情绪降温。</p>
-          <div class="meta">
-            <span class="tag">券商</span>
-            <span class="source-tag">来源：财联社 / Wind</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance space">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>高盛上调 2031 年全球低轨卫星装机量至 30.5 万颗（+634%）</h3>
-          <p>长征十号乙实现 LNG 制备高纯甲烷燃料工程化应用，大幅降低火箭发射成本。利好卫星批量组网、高频次发射，航天新材料、特种零部件、太空算力赛道长期逻辑打开。</p>
-          <div class="meta">
-            <span class="tag">商业航天</span>
-            <span class="source-tag">来源：Bloomberg / 高盛</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance energy">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>"十五五"双碳方案印发，2030 年单位 GDP 碳排放降 17%</h3>
-          <p>非化石能源消费占比提升至 25%。重点推进省间特高压电力互通、工业节能改造、新型储能规模化布局。前 5 月船舶出口 1700 亿元同比增长 22.5%。</p>
-          <div class="meta">
-            <span class="tag">双碳</span>
-            <span class="source-tag">来源：新华社 / 财联社</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>美股科技板块震荡修复，费城半导体单日涨 3.06%</h3>
-          <p>道指+0.27%，标普 500+0.81%，纳指+1.3%。Meta 涨近 6%，英伟达涨超 4%。美联储官员表态仍优先压制通胀，美债收益率小幅走高。现货黄金跌破 4120 美元/盎司。</p>
-          <div class="meta">
-            <span class="tag">美股</span>
-            <span class="source-tag">来源：Bloomberg / Reuters</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="finance">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>A 股中报季开启：朗特智能净利预增 176%，牧原预亏 67 亿</h3>
-          <p>高预增标的集中在电子制造、消费材料领域。生猪养殖板块亏损扩大，部分 PCB、传统加工企业由盈转亏。五矿发展完成 281 亿元铁矿资产置入重大重组。</p>
-          <div class="meta">
-            <span class="tag">中报</span>
-            <span class="source-tag">来源：Wind / 财联社</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 军事科技 -->
-    <section class="section" id="military">
-      <div class="section-header">
-        <div class="bar military"></div>
-        <h2>⚔️ 军事科技</h2>
-        <span class="count">3 条</span>
-      </div>
-
-      <div class="news-card" data-cat="military">
-        <div class="priority-bar mid"></div>
-        <div class="content">
-          <h3>美太空军列装"草地"电磁辐射武器</h3>
-          <p>首批非动能"草地"系统服役，可对敌方卫星实施可逆式电磁致盲与干扰，构建轨道战能力。英国斥 20 亿英镑建 AI 作战实验室，依托智能技术重塑现代战场演习模式。</p>
-          <div class="meta">
-            <span class="tag">太空军</span>
-            <span class="source-tag">来源：环球网 / Defense News</span>
-            <span class="new-badge">NEW</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="military">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>美军启动历史性军改：AI 算法 + 无人蜂群重构作战体系</h3>
-          <p>五角大楼依托 AI 算法、全域卫星感知和无人蜂群作战，重构对华不对称压制能力。乌军在顿巴斯实测人形作战机器人 Phantom MK-1，俄军无人机摧毁乌军地面作战机器人。</p>
-          <div class="meta">
-            <span class="tag">军事AI</span>
-            <span class="source-tag">来源：环球网 / Defense News</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" data-cat="military energy">
-        <div class="priority-bar low"></div>
-        <div class="content">
-          <h3>英伟达 Blackwell AI 芯片直连先进核反应堆</h3>
-          <p>英伟达在犹他州试点 Blackwell AI 芯片直连先进核反应堆，为高密度 AI 数据中心提供专属稳定能源，突破传统电网供电瓶颈。</p>
-          <div class="meta">
-            <span class="tag">核能</span>
-            <span class="source-tag">来源：IEEE Spectrum / Reuters</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- No Result -->
     <div class="no-result" id="noResult">
@@ -1012,30 +1024,55 @@
     <!-- Footer -->
     <footer>
       <div class="sources-list">
-        数据来源：头条 · 36氪 · 虎嗅 · CSDN · IT之家 · 钛媒体 · 雷锋网 · 网易科技 · 新华社 · 财联社 · Wind · TechCrunch · Reuters · Bloomberg · The Information · The Verge · VentureBeat · Wired · IEEE Spectrum · Nature · Science · Defense News · 高盛
+        数据来源：头条 · 36氪 · 虎嗅 · CSDN · IT之家 · 钛媒体 · 雷锋网 · 网易科技 · 新浪 · 新华社 · 财联社 · Wind · 连线Insight · 吴晓波频道 · 新智元 · TechCrunch · Reuters · Bloomberg · The Information · The Verge · VentureBeat · Wired · IEEE Spectrum · Nature · Science · Defense News · 日经亚洲 · Fox Business · 高盛 · 摩根士丹利
       </div>
       <div class="brand">
-        <strong>TechFin Weekly</strong> · AI 驱动的科技与财经周刊 · 2026
+        <strong>TechFin Weekly</strong> · AI 驱动的科技与财经周报 + 每日实时 · 2026
       </div>
     </footer>
 
   </article>
 
   <script>
-    // Category Filter
-    (function() {
-      var filterBtns = document.querySelectorAll('.filter-btn');
-      var cards = document.querySelectorAll('.news-card');
-      var sections = document.querySelectorAll('.section');
+    // Tab Switch
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      event.target.classList.add('active');
+
+      var weekly = document.getElementById('weekly-panel');
+      var daily = document.getElementById('daily-panel');
       var noResult = document.getElementById('noResult');
 
-      filterBtns.forEach(function(btn) {
+      if (tab === 'weekly') {
+        weekly.style.display = '';
+        daily.style.display = 'none';
+      } else {
+        weekly.style.display = 'none';
+        daily.style.display = '';
+      }
+      noResult.classList.remove('show');
+
+      // Reset filter
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      var firstBtn = document.querySelector('#' + tab + '-panel .filter-btn');
+      if (!firstBtn) firstBtn = document.querySelector('.filter-btn');
+      if (firstBtn) firstBtn.classList.add('active');
+
+      document.querySelectorAll('.news-card').forEach(function(c) { c.classList.remove('hidden'); });
+      document.querySelectorAll('.section').forEach(function(s) { s.style.display = ''; });
+    }
+
+    // Filter
+    (function() {
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          var parent = btn.closest('#weekly-panel, #daily-panel') || document;
+          parent.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
 
           var filter = btn.getAttribute('data-filter');
           var visibleCount = 0;
+          var cards = parent.querySelectorAll('.news-card');
 
           cards.forEach(function(card) {
             if (filter === 'all') {
@@ -1052,22 +1089,28 @@
             }
           });
 
-          sections.forEach(function(sec) {
+          parent.querySelectorAll('.section').forEach(function(sec) {
             var visible = sec.querySelectorAll('.news-card:not(.hidden)');
-            if (visible.length === 0 && filter !== 'all') {
-              sec.style.display = 'none';
-            } else {
-              sec.style.display = '';
-            }
+            sec.style.display = visible.length === 0 && filter !== 'all' ? 'none' : '';
           });
 
-          if (visibleCount === 0) {
-            noResult.classList.add('show');
-          } else {
-            noResult.classList.remove('show');
-          }
+          var noResult = document.getElementById('noResult');
+          if (visibleCount === 0) { noResult.classList.add('show'); } else { noResult.classList.remove('show'); }
         });
       });
+    })();
+
+    // Update time
+    (function() {
+      function updateTime() {
+        var now = new Date();
+        var h = String(now.getHours()).padStart(2, '0');
+        var m = String(now.getMinutes()).padStart(2, '0');
+        var el = document.getElementById('updateTime');
+        if (el) el.textContent = h + ':' + m + ' 更新';
+      }
+      updateTime();
+      setInterval(updateTime, 60000);
     })();
   </script>
 
