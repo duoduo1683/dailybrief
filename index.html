@@ -182,6 +182,8 @@
     .section-header .bar.intl { background: var(--accent2); }
     .section-header .bar.military { background: var(--red); }
     .section-header .bar.daily { background: var(--pink); }
+    .section-header .bar.bio { background: #14b8a6; }
+    .section-header .bar.energy { background: #f97316; }
     .section-header h2 { font-size: 0.88rem; font-weight: 700; }
     .section-header .count { font-size: 0.65rem; color: var(--muted2); margin-left: auto; }
 
@@ -250,13 +252,13 @@
     <div class="hero">
       <div class="week-badge">📡 2026年第28周 · 7月第2周</div>
       <h1>科技与财经<span class="gradient">周报 + 每日实时</span></h1>
-      <p class="sub">聚合全球 25+ 平台：头条 / 36氪 / 虎嗅 / CSDN / 新浪 / 网易 / TechCrunch / Reuters / Bloomberg / The Verge / Nature / Science 等，AI 全天筛选。</p>
+      <p class="sub">聚合全球 30+ 平台：头条 / 36氪 / 虎嗅 / CSDN / 新浪 / 网易 / TechCrunch / Reuters / Bloomberg / The Verge / Nature / Science / 药明康德 / 丁香园 / 北极星太阳能 / IEA 等，AI 全天筛选。</p>
     </div>
 
     <!-- Stats -->
     <div class="stats-row">
-      <div class="stat-box"><div class="num">60+</div><div class="label">本周新闻</div></div>
-      <div class="stat-box"><div class="num">25+</div><div class="label">信源平台</div></div>
+      <div class="stat-box"><div class="num">80+</div><div class="label">本周新闻</div></div>
+      <div class="stat-box"><div class="num">30+</div><div class="label">信源平台</div></div>
       <div class="stat-box"><div class="num">5min</div><div class="label">阅读时间</div></div>
       <div class="stat-box"><div class="num">0</div><div class="label">广告</div></div>
     </div>
@@ -279,6 +281,10 @@
           <p><strong>中国前沿"七箭齐发"：</strong>九章四号量子计算机比超算快 10⁵⁴ 倍；首条 8 英寸二维半导体工艺线贯通；长征十号乙火箭全球首次海上网系回收；曙光 8000 十万卡 AI 超集群落成；北大神经动力学芯片登《Science》；美团 LongCat-2.0 证明国产算力可行；核聚变超导磁体全链路国产化。</p>
           <br>
           <p><strong>财经市场：</strong>北向资金持仓创 3.13 万亿新高转向硬科技。央行二季度例会释放宽松，8000 亿超长期特别国债下达。国常会划定新质生产力六大赛道。中信证券半年净利预增 69.6%。通富微电与 SK 海力士签 62.8 亿 HBM 大单。高盛上调 2031 年低轨卫星装机至 30.5 万颗（+634%）。</p>
+          <br>
+          <p><strong>生物医疗爆发：</strong>上半年 NMPA 批准 32 款国产 1 类新药，全球首创（FIC）占比 23%。医保双目录 54 个药品通过初审，创新药出海授权逼近千亿美元。百利天恒、科陵药业等多款创新药同日获批。药明康德 TIDE 技术 platform 进入临床。爱尔眼科再生医学干细胞角膜再生突破。4 年 Biotech 凭 IL-13 抗体卖出 109 亿美元。</p>
+          <br>
+          <p><strong>能源格局巨变：</strong>宁德时代发布全球首款钠电储能方案"天恒钠电"，成本较锂电低 15-20%，2026 年底 1GWh 出货。"十五五"双碳方案落地：储能 3 亿千瓦 + 抽水蓄能 1.6 亿千瓦。德国建 24 太瓦时国有战略天然气储备。史上最严电池安全令正式落地。布伦特原油 70.36 美元/桶，中东局势推升波动。印尼限制煤炭出口重塑全球供给。</p>
         </div>
         <div class="key-topics">
           <span class="topic-tag">GPT-5.6</span>
@@ -291,6 +297,9 @@
           <span class="topic-tag">宇树IPO</span>
           <span class="topic-tag">可灵30亿</span>
           <span class="topic-tag">MiniMax 160亿</span>
+          <span class="topic-tag">32款1类新药</span>
+          <span class="topic-tag">天恒钠电</span>
+          <span class="topic-tag">双碳3亿千瓦</span>
         </div>
       </div>
 
@@ -304,6 +313,7 @@
         <button class="filter-btn" data-filter="finance">📊 财经</button>
         <button class="filter-btn" data-filter="space">🚀 航天</button>
         <button class="filter-btn" data-filter="energy">⚡ 能源</button>
+        <button class="filter-btn" data-filter="bio">🧬 生物医疗</button>
         <button class="filter-btn" data-filter="military">⚔️ 军事</button>
       </div>
 
@@ -765,6 +775,168 @@
           </div>
         </div>
       </section>
+
+      <!-- 生物医疗科技 -->
+      <section class="section" id="bio">
+        <div class="section-header">
+          <div class="bar bio"></div>
+          <h2>🧬 生物医疗科技</h2>
+          <span class="count">8 条</span>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>上半年 NMPA 批准 32 款国产 1 类新药，FIC 占比 23%</h3>
+            <p>全球首创（FIC）药物比例同比提升 16 个百分点，国产创新药从"跟随"迈向"原创"。百利天恒、科济药业、智翔金泰、礼来等多款创新药同日获批。行业从管线炒作转向业绩兑现。</p>
+            <div class="meta"><span class="tag">创新药</span><span class="source-tag">NMPA / 新浪医药</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>医保双目录初审：54 个药品通过商保创新药目录初审</h3>
+            <p>国家医保局 6 月 29 日公布 2026 年医保双目录初审名单，汇集多家医药上市公司核心创新药品种。医保支付政策持续松绑，创新药准入通道打通。</p>
+            <div class="meta"><span class="tag">医保</span><span class="source-tag">国家医保局 / 财联社</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>国产创新药出海半年逼近千亿美元，底层逻辑彻底反转</h3>
+            <p>2026 上半年创新药出海授权交易接近千亿美元规模。国家从研发、定价、医保全链条出台支持政策。和誉医药、海思科、英矽智能、德琪医药等密集达成海外授权交易。</p>
+            <div class="meta"><span class="tag">出海</span><span class="source-tag">搜狐 / 财联社 / 新浪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>4 年 Biotech 凭一款 IL-13 抗体卖出 109 亿美元</h3>
+            <p>成立仅四年的 Biotech 公司凭借 IL-13 抗体撬动 109 亿美元收购，261 名员工人均创造 4175 万美元价值。背后是 Dupilumab 专利悬崖（2031 年到期）催生的替代机遇。</p>
+            <div class="meta"><span class="tag">生物医药</span><span class="source-tag">头条 / Endpoints News</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>药监局优化细胞与基因治疗监管，CGT 产业化提速</h3>
+            <p>7 月 3 日国家药监局发布《关于优化细胞与基因治疗监管的指导原则》，简化临床试验审批流程。CAR-T 疗法、基因编辑治疗加速进入临床转化阶段。</p>
+            <div class="meta"><span class="tag">CGT</span><span class="source-tag">国家药监局 / 医药经济报</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>眼科再生医学突破：干细胞角膜再生技术进入临床</h3>
+            <p>2026 年眼科再生医学核心技术突破预测报告显示，干细胞技术在角膜再生中的应用取得关键进展。全球及中国再生医学产业从单一治疗向全生命周期生态扩展。</p>
+            <div class="meta"><span class="tag">再生医学</span><span class="source-tag">Nature Medicine / 医药魔方</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>AI 药物发现进入收获期：英矽智能 INS018_055 进入 II 期临床</h3>
+            <p>全球首个由 AI 全流程设计的新药进入 II 期临床试验。AI 制药从概念验证迈入临床兑现期，Insilico Medicine、晶泰科技等中国 AI 制药企业密集获得海外授权。</p>
+            <div class="meta"><span class="tag">AI制药</span><span class="source-tag">Nature / 36氪 / 雷锋网</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>上半年超四成 Biotech 企业扭亏，行业拐点确认</h3>
+            <p>2026 年上半年超 40% 的港股 Biotech 企业实现扭亏，国产新药接连登上《新英格兰医学杂志》《自然》等顶刊。真正具备全球竞争力的创新药企开始浮现。</p>
+            <div class="meta"><span class="tag">行业拐点</span><span class="source-tag">头条 / 医药魔方 / Wind</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 能源变动 -->
+      <section class="section" id="energy-weekly">
+        <div class="section-header">
+          <div class="bar energy"></div>
+          <h2>⚡ 能源变动 · 全球</h2>
+          <span class="count">8 条</span>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>宁德时代发布全球首款钠电储能方案"天恒钠电"</h3>
+            <p>系统成本较传统锂电低 15-20%，2026 年底实现 1GWh 出货，海外 2027 年 6 月投放。新增福鼎 40GWh、济宁 160GWh 钠电产能。钠电池正式迎来独立成长周期。</p>
+            <div class="meta"><span class="tag">钠电池</span><span class="source-tag">中泰证券 / 搜狐 / 36氪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>"十五五"双碳方案落地：储能 3 亿千瓦 + 抽水蓄能 1.6 亿千瓦</h3>
+            <p>大力发展虚拟电厂、源网荷储一体化。目标 2030 年抽水蓄能装机 1.6 亿千瓦，新型储能 3 亿千瓦。发改委落实 2000 亿"两新"设备更新资金覆盖上万个制造业技改项目。</p>
+            <div class="meta"><span class="tag">双碳</span><span class="source-tag">新华社 / 财联社</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>史上最严电池安全令正式落地，产业竞争逻辑深刻重塑</h3>
+            <p>新国标对动力电池热失控、针刺、挤压等安全指标提出全球最严格要求。不达标产品强制退出市场，行业从价格战转向技术+安全双驱动。储能行业历经政策退坡后完成市场化转身。</p>
+            <div class="meta"><span class="tag">电池安全</span><span class="source-tag">头条 / 高工锂电</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>德国建 24 太瓦时国有战略天然气储备，应对能源紧急情况</h3>
+            <p>德国经济与能源部 7 月 7 日宣布建立国有战略天然气储备，总量约 24 太瓦时，相当于德国总储备量近 10%。采购将在两三年内分批完成，减少对俄气依赖。</p>
+            <div class="meta"><span class="tag">天然气</span><span class="source-tag">头条 / IEA / Reuters</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>布伦特原油 70.36 美元/桶（+2.51%），中东局势推升波动</h3>
+            <p>IEA 称全球成品油供需偏紧，炼油利润走高。中东局势带来原油供给担忧。美以伊战争冲击 2026 年上半年国际天然气市场，IEA 发布 Q3 天然气市场报告警示供应风险。</p>
+            <div class="meta"><span class="tag">原油</span><span class="source-tag">Bloomberg / Reuters / IEA</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>印尼限制煤炭出口，全球动力煤供给格局重塑</h3>
+            <p>全球最大动力煤出口国印尼明确优先保证国内供应，限制出口。2026 下半年原油、煤炭、钢铁三大宗品类迎来格局转折。传统能源"夕阳"标签面临重新审视。</p>
+            <div class="meta"><span class="tag">煤炭</span><span class="source-tag">头条 / Reuters</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy chip">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>英伟达 Blackwell AI 芯片直连先进核反应堆</h3>
+            <p>英伟达在犹他州试点 Blackwell AI 芯片直连先进核反应堆，为高密度 AI 数据中心提供专属稳定能源，突破传统电网供电瓶颈。AI 算力与核能深度绑定。</p>
+            <div class="meta"><span class="tag">核能</span><span class="source-tag">IEEE Spectrum / Reuters</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>7 月中国电池排产环比 +5.6%，新能源材料赛道持续活跃</h3>
+            <p>钠电池量产倒计时，成本低 40%。宁德时代在德国慕尼黑发布天恒钠电储能系统，宣布中国市场领先。新能源材料赛道投融资活跃，储能完成市场化转身。</p>
+            <div class="meta"><span class="tag">新能源</span><span class="source-tag">中泰证券 / 高工锂电</span></div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- ========== DAILY PANEL ========== -->
@@ -786,6 +958,7 @@
         <button class="filter-btn" data-filter="finance">📊 财经</button>
         <button class="filter-btn" data-filter="space">🚀 航天</button>
         <button class="filter-btn" data-filter="energy">⚡ 能源</button>
+        <button class="filter-btn" data-filter="bio">🧬 医疗</button>
         <button class="filter-btn" data-filter="military">⚔️ 军事</button>
       </div>
 
@@ -969,6 +1142,114 @@
         </div>
       </section>
 
+      <!-- 今日生物医疗 -->
+      <section class="section" id="daily-bio">
+        <div class="section-header">
+          <div class="bar bio"></div>
+          <h2>🧬 今日生物医疗 · 7月12日</h2>
+          <span class="count">5 条</span>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>NMPA 上半年批准 32 款国产 1 类新药，FIC 占比创新高</h3>
+            <p>全球首创药物比例达 23%，同比提升 16 个百分点。百利天恒、科济药业、智翔金泰等多款创新药同日获批。国产创新药正式迈入全球首创、技术自主、盈利兑现的质变周期。</p>
+            <div class="meta"><span class="tag">创新药</span><span class="source-tag">NMPA / 头条 / 新浪医药</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>医保双目录 54 个药品通过初审，创新药支付通道打通</h3>
+            <p>国家医保局公布 2026 年医保双目录初审名单，汇集多家医药上市公司核心品种。药监局同步发布细胞与基因治疗监管优化方案，CGT 产业化提速。</p>
+            <div class="meta"><span class="tag">医保</span><span class="source-tag">国家医保局 / 财联社</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>创新药出海半年逼近千亿美元，散户配置时机来了？</h3>
+            <p>上半年创新药出海授权交易接近千亿美元。和誉医药、海思科、英矽智能等密集达成海外授权。国家从研发、定价、医保全链条出台支持政策，底层逻辑彻底反转。</p>
+            <div class="meta"><span class="tag">出海</span><span class="source-tag">搜狐 / 财联社</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio ai">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>AI 制药收获期：英矽智能全球首个 AI 设计新药进入 II 期临床</h3>
+            <p>INS018_055 由 AI 全流程设计，现已进入 II 期临床试验。晶泰科技等中国 AI 制药企业密集获得海外授权。AI 药物发现从概念验证迈入临床兑现阶段。</p>
+            <div class="meta"><span class="tag">AI制药</span><span class="source-tag">Nature / 36氪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="bio">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>4 年 Biotech 凭 IL-13 抗体卖出 109 亿美元</h3>
+            <p>261 名员工人均创造 4175 万美元价值。Dupilumab 专利 2031 年到期催生替代药机遇。上半年超四成港股 Biotech 扭亏，行业拐点确认。</p>
+            <div class="meta"><span class="tag">生物医药</span><span class="source-tag">Endpoints News / 头条</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 今日能源 -->
+      <section class="section" id="daily-energy">
+        <div class="section-header">
+          <div class="bar energy"></div>
+          <h2>⚡ 今日能源 · 7月12日</h2>
+          <span class="count">5 条</span>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>宁德时代"天恒钠电"储能方案发布，成本较锂电低 15-20%</h3>
+            <p>全球首款场站级钠电储能解决方案，2026 年底 1GWh 出货。新增福鼎 40GWh + 济宁 160GWh 钠电产能。7 月中国电池排产环比 +5.6%，钠电池迎来独立成长周期。</p>
+            <div class="meta"><span class="tag">钠电池</span><span class="source-tag">中泰证券 / 36氪</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy finance">
+          <div class="priority-bar high"></div>
+          <div class="content">
+            <h3>"十五五"双碳方案：储能 3 亿千瓦 + 抽水蓄能 1.6 亿千瓦</h3>
+            <p>大力发展虚拟电厂、源网荷储一体化。利好储能、绿电、电网产业链。发改委 2000 亿"两新"设备更新资金覆盖上万个制造业技改项目。</p>
+            <div class="meta"><span class="tag">双碳</span><span class="source-tag">新华社 / 财联社</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>史上最严电池安全令落地，不达标产品强制退市</h3>
+            <p>新国标对热失控、针刺、挤压等指标提出全球最严要求。储能行业历经政策退坡后完成市场化转身，产业竞争从价格战转向技术+安全双驱动。</p>
+            <div class="meta"><span class="tag">电池安全</span><span class="source-tag">头条 / 高工锂电</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy finance">
+          <div class="priority-bar mid"></div>
+          <div class="content">
+            <h3>布伦特原油 70.36 美元/桶（+2.51%），中东局势推升波动</h3>
+            <p>IEA 称全球成品油供需偏紧，炼油利润走高。中东局势带来原油供给担忧。德国建 24 太瓦时国有战略天然气储备，减少对俄气依赖。</p>
+            <div class="meta"><span class="tag">原油</span><span class="source-tag">Bloomberg / Reuters / IEA</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+
+        <div class="news-card" data-cat="energy">
+          <div class="priority-bar low"></div>
+          <div class="content">
+            <h3>印尼限制煤炭出口，全球动力煤供给格局重塑</h3>
+            <p>全球最大动力煤出口国优先保证国内供应。2026 下半年原油、煤炭、钢铁三大宗品类迎来格局转折，传统能源"夕阳"标签面临重新审视。</p>
+            <div class="meta"><span class="tag">煤炭</span><span class="source-tag">头条 / Reuters</span><span class="new-badge">NEW</span></div>
+          </div>
+        </div>
+      </section>
+
       <!-- 本周关键时间窗口 -->
       <section class="section">
         <div class="section-header">
@@ -1024,7 +1305,7 @@
     <!-- Footer -->
     <footer>
       <div class="sources-list">
-        数据来源：头条 · 36氪 · 虎嗅 · CSDN · IT之家 · 钛媒体 · 雷锋网 · 网易科技 · 新浪 · 新华社 · 财联社 · Wind · 连线Insight · 吴晓波频道 · 新智元 · TechCrunch · Reuters · Bloomberg · The Information · The Verge · VentureBeat · Wired · IEEE Spectrum · Nature · Science · Defense News · 日经亚洲 · Fox Business · 高盛 · 摩根士丹利
+        数据来源：头条 · 36氪 · 虎嗅 · CSDN · IT之家 · 钛媒体 · 雷锋网 · 网易科技 · 新浪 · 新华社 · 财联社 · Wind · 连线Insight · 吴晓波频道 · 新智元 · TechCrunch · Reuters · Bloomberg · The Information · The Verge · VentureBeat · Wired · IEEE Spectrum · Nature · Science · Defense News · 日经亚洲 · Fox Business · 高盛 · 摩根士丹利 · NMPA · 国家医保局 · 国家药监局 · 医药魔方 · Endpoints News · 新浪医药 · 医药经济报 · 中泰证券 · 高工锂电 · IEA
       </div>
       <div class="brand">
         <strong>TechFin Weekly</strong> · AI 驱动的科技与财经周报 + 每日实时 · 2026
