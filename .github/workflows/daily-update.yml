@@ -1,0 +1,42 @@
+# GitHub Actions: 每日自动更新
+# 每天 UTC 0:00（北京时间 8:00）自动运行
+# 也可以在 GitHub 网页手动触发
+
+name: 每日自动更新
+
+on:
+  # 定时触发：每天 UTC 0:00 = 北京时间 8:00
+  schedule:
+    - cron: '0 0 * * *'
+  # 允许手动触发（在 GitHub Actions 页面点 "Run workflow"）
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # 1. 拉取仓库代码
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      # 2. 配置 Node.js
+      - name: 配置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. 运行更新脚本
+      - name: 更新内容
+        run: node scripts/update-content.js
+
+      # 4. 提交并推送变更
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --quiet HEAD || git commit -m "🤖 自动更新: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M') 北京时间"
+          git push
